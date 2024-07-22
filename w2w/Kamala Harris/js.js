@@ -75,13 +75,10 @@ function getRandomNumber(min, max) {
 
 // Función para actualizar el valor progresivo y el tiempo de espera
 function updateValue() {
-  let currentValue = parseFloat(localStorage.getItem('usdt-raised')) || 879320.00; // Valor inicial
+  let currentValue = parseFloat(localStorage.getItem('usdt-raised')) || 479312.52; // Valor inicial
   const targetValue = 600000000.00; // Valor objetivo
-  
-  // Incremento en montos específicos: 20, 50, o 100
-  const increments = [20, 20, 20];
-  const increment = increments[Math.floor(Math.random() * increments.length)];
-  
+  const increment = getRandomNumber(20.48, 100.13); // Incremento aleatorio
+
   // Incrementar el valor actual
   const newValue = Math.min(currentValue + increment, targetValue);
 
@@ -91,17 +88,16 @@ function updateValue() {
   // Guardar el nuevo valor en el almacenamiento local
   localStorage.setItem('usdt-raised', newValue);
   
-  // Generar tiempo de espera aleatorio entre 1000ms (1 segundo) y 10000ms (10 segundos)
-  const randomWaitTime = getRandomNumber(5000, 20000);
-  
   // Si no hemos alcanzado el valor objetivo, programar la próxima actualización
   if (newValue < targetValue) {
-      setTimeout(updateValue, randomWaitTime);
+    setTimeout(updateValue, getRandomNumber(1300, 5330));
   }
 }
 
 // Llamar a la función inicialmente para comenzar la cuenta progresiva
 updateValue();
+
+    // FIN SUMA DE $
 
 
 
