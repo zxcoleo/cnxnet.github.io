@@ -56,7 +56,7 @@ body, html {
 .purchase-interface {
     background: linear-gradient(90deg, rgba(50, 50, 100, 0.7) 30%, rgba(50, 50, 100, 0.70) 70%);
     border-radius: 20px;
-    width: 480px;
+    width: 500px;
     position: absolute;
     left: 50%;
     top: 50%;
